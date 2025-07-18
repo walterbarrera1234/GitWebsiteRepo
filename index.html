@@ -2,11 +2,85 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My GitHub Page</title>
+  <title>Tabbed Site Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background: #f9f9f9;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .tab {
+      padding: 10px 20px;
+      background: #eee;
+      border: 1px solid #ccc;
+      cursor: pointer;
+    }
+
+    .tab.active {
+      background: #007acc;
+      color: white;
+      border-color: #007acc;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+      background: white;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome to My GitHub Page!</h1>
-  <p>This is a test page hosted on GitHub Pages.</p>
+
+  <h1>Ezequiel’s Multi-Tab Site</h1>
+
+  <!-- TABS -->
+  <div class="tabs">
+    <div class="tab active" onclick="showTab('home')">Home</div>
+    <div class="tab" onclick="showTab('projects')">Projects</div>
+    <div class="tab" onclick="showTab('about')">About Me</div>
+  </div>
+
+  <!-- TAB CONTENT -->
+  <div id="home" class="tab-content active">
+    <h2>Welcome</h2>
+    <p>This is the home section of my awesome site. 🚀</p>
+  </div>
+
+  <div id="projects" class="tab-content">
+    <h2>My Projects</h2>
+    <p>Here’s where I’ll eventually showcase Power BI dashboards, scraping tools, and wild inventory hacks.</p>
+  </div>
+
+  <div id="about" class="tab-content">
+    <h2>About Me</h2>
+    <p>Math major, logistics optimizer, data warrior. Passionate about solving real problems with clean design and smart automation.</p>
+  </div>
+
+  <script>
+    function showTab(tabId) {
+      const tabs = document.querySelectorAll('.tab');
+      const contents = document.querySelectorAll('.tab-content');
+
+      tabs.forEach(tab => tab.classList.remove('active'));
+      contents.forEach(content => content.classList.remove('active'));
+
+      document.querySelector(`.tab[onclick*="${tabId}"]`).classList.add('active');
+      document.getElementById(tabId).classList.add('active');
+    }
+  </script>
+
 </body>
 </html>
+
