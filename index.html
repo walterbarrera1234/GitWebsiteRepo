@@ -1,86 +1,127 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Tabbed Site Example</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 40px;
-      background: #f9f9f9;
-    }
-
-    .tabs {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-
-    .tab {
-      padding: 10px 20px;
-      background: #eee;
-      border: 1px solid #ccc;
-      cursor: pointer;
-    }
-
-    .tab.active {
-      background: #007acc;
-      color: white;
-      border-color: #007acc;
-    }
-
-    .tab-content {
-      display: none;
-    }
-
-    .tab-content.active {
-      display: block;
-      background: white;
-      padding: 20px;
-      border: 1px solid #ccc;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ezequiel Barrera – Home</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <h1>Ezequiel’s Project Website and Blog</h1>
-
-  <!-- TABS -->
-  <div class="tabs">
-    <div class="tab active" onclick="showTab('home')">Home</div>
-    <div class="tab" onclick="showTab('projects')">Projects</div>
-    <div class="tab" onclick="showTab('about')">About Me</div>
-  </div>
-
-  <!-- TAB CONTENT -->
-  <div id="home" class="tab-content active">
+  <header>
+    <h1>Ezequiel Barrera</h1>
+    <p>Data | Math | Strategy | Systems</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="blog.html">Blog</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+  <main>
     <h2>Welcome</h2>
-    <p>This is the home section of my awesome site. In this site you will find many projects that I have undertaken, some have created contibutions ot buisniess of hundreds of thousands of dollars in revenue. I will detail my projects os that you can see exactly what i mean. I will shocase my project shere, the code and everything can be founf in the github repository I linked</p>
-  </div>
-
-  <div id="projects" class="tab-content">
-    <h2>My Projects</h2>
-    <p>Here’s where I’ll eventually showcase Power BI dashboards, scraping tools, and wild inventory hacks.</p>
-  </div>
-
-  <div id="about" class="tab-content">
-    <h2>About Me</h2>
-    <p>Hi, I'm Ezequiel. I am a pure mathematics graduate working as an Analyst for a medium sized copmany, currently, I am very interested in finding your companies biggest problems and absolutely killing them! I love collaboration and individuals who really care about the work they do. On a fun note, the most important thing that my math degree has taught me is that being stupid at something you have never done is the only way to learn something.  </p>
-  </div>
-
-  <script>
-    function showTab(tabId) {
-      const tabs = document.querySelectorAll('.tab');
-      const contents = document.querySelectorAll('.tab-content');
-
-      tabs.forEach(tab => tab.classList.remove('active'));
-      contents.forEach(content => content.classList.remove('active'));
-
-      document.querySelector(`.tab[onclick*="${tabId}"]`).classList.add('active');
-      document.getElementById(tabId).classList.add('active');
-    }
-  </script>
-
+    <p>This is a living space for thoughts, experiments, and dashboards — a place to think out loud and communicate clearly.</p>
+  </main>
 </body>
 </html>
 
+<!-- style.css -->
+body {
+  font-family: Georgia, serif;
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 0 20px;
+  background: #f9f9f9;
+  color: #333;
+}
+
+header {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 30px;
+}
+
+nav a {
+  margin-right: 15px;
+  text-decoration: none;
+  color: #007acc;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 0;
+}
+
+h2 {
+  color: #007acc;
+  margin-top: 40px;
+}
+
+/* You can add more styles here as you go */
+
+<!-- blog.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Blog – Ezequiel Barrera</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Blog</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="blog.html">Blog</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+  <main>
+    <ul>
+      <li><a href="post-1.html">📦 SKU Freshness Decay: Modeling Sell-Through After Shipment</a></li>
+      <!-- You can add more blog post links here -->
+    </ul>
+  </main>
+</body>
+</html>
+
+<!-- post-1.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SKU Freshness Decay – Blog</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📦 SKU Freshness Decay</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+  </header>
+  <main>
+    <p><strong>Posted:</strong> July 18, 2025</p>
+    <p>After a SKU is cleanly shipped, we can often observe a natural decay in sales velocity over time. This post discusses a method to estimate the decay curve using shipment date and sell-through data.</p>
+
+    <h2>Simple Decay Model</h2>
+    <p>Assuming exponential decay, we can write:</p>
+    <p>\[ S(t) = S_0 \cdot e^{-kt} \]</p>
+    <p>Where \( S_0 \) is initial sales rate and \( k \) is the decay rate. The goal is to estimate \( k \) for various SKUs.</p>
+
+    <h2>Next Steps</h2>
+    <ul>
+      <li>Apply to high-velocity SKUs across zones</li>
+      <li>Compare against actual sales data from System Manager</li>
+      <li>Visualize in Power BI with rolling averages</li>
+    </ul>
+  </main>
+</body>
+</html>
