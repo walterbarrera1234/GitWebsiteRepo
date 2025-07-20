@@ -1,127 +1,72 @@
-<!-- index.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ezequiel Barrera – Home</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <h1>Ezequiel Barrera</h1>
-    <p>Data | Math | Strategy | Systems</p>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="blog.html">Blog</a>
-      <a href="projects.html">Projects</a>
-      <a href="about.html">About</a>
-    </nav>
-  </header>
-  <main>
-    <h2>Welcome</h2>
-    <p>This is a living space for thoughts, experiments, and dashboards — a place to think out loud and communicate clearly.</p>
-  </main>
-</body>
-</html>
-
-<!-- style.css -->
+/* style.css */
 body {
-  font-family: Georgia, serif;
-  max-width: 700px;
-  margin: 40px auto;
-  padding: 0 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
   background: #f9f9f9;
   color: #333;
+  line-height: 1.6;
 }
 
 header {
-  border-bottom: 1px solid #ccc;
-  margin-bottom: 30px;
-}
-
-nav a {
-  margin-right: 15px;
-  text-decoration: none;
-  color: #007acc;
-}
-
-nav a:hover {
-  text-decoration: underline;
+  background: white;
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  border-radius: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 h1 {
-  font-size: 2.5em;
-  margin-bottom: 0;
+  margin: 0;
+  font-size: 2rem;
+  color: #007acc;
+}
+
+nav {
+  margin-top: 0.5rem;
+}
+
+nav a {
+  margin-right: 1.5rem;
+  text-decoration: none;
+  color: #444;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: #007acc;
+}
+
+main {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.03);
 }
 
 h2 {
   color: #007acc;
-  margin-top: 40px;
+  margin-top: 2rem;
 }
 
-/* You can add more styles here as you go */
+ul {
+  padding-left: 1.5rem;
+}
 
-<!-- blog.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Blog – Ezequiel Barrera</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <h1>Blog</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="blog.html">Blog</a>
-      <a href="projects.html">Projects</a>
-      <a href="about.html">About</a>
-    </nav>
-  </header>
-  <main>
-    <ul>
-      <li><a href="post-1.html">📦 SKU Freshness Decay: Modeling Sell-Through After Shipment</a></li>
-      <!-- You can add more blog post links here -->
-    </ul>
-  </main>
-</body>
-</html>
+li {
+  margin-bottom: 0.5rem;
+}
 
-<!-- post-1.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>SKU Freshness Decay – Blog</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-</head>
-<body>
-  <header>
-    <h1>📦 SKU Freshness Decay</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="blog.html">Blog</a>
-    </nav>
-  </header>
-  <main>
-    <p><strong>Posted:</strong> July 18, 2025</p>
-    <p>After a SKU is cleanly shipped, we can often observe a natural decay in sales velocity over time. This post discusses a method to estimate the decay curve using shipment date and sell-through data.</p>
+a {
+  color: #007acc;
+}
 
-    <h2>Simple Decay Model</h2>
-    <p>Assuming exponential decay, we can write:</p>
-    <p>\[ S(t) = S_0 \cdot e^{-kt} \]</p>
-    <p>Where \( S_0 \) is initial sales rate and \( k \) is the decay rate. The goal is to estimate \( k \) for various SKUs.</p>
-
-    <h2>Next Steps</h2>
-    <ul>
-      <li>Apply to high-velocity SKUs across zones</li>
-      <li>Compare against actual sales data from System Manager</li>
-      <li>Visualize in Power BI with rolling averages</li>
-    </ul>
-  </main>
-</body>
-</html>
+a:hover {
+  text-decoration: underline;
+}
